@@ -1,11 +1,12 @@
 @echo off
 title Nexus Research - Development Launcher
+cd /d "%~dp0"
 echo ============================================================
 echo   Nexus Research AI RAG - Development Mode
 echo ============================================================
 echo.
 echo 1. Starting Backend API on http://127.0.0.1:8000 ...
-start "Nexus Backend API (:8000)" cmd /k ".\venv\python.exe -m uvicorn backend.main:app --host 127.0.0.1 --port 8000 --reload"
+start "Nexus Backend API (:8000)" cmd /k ".\venv\Scripts\python.exe -m uvicorn backend.main:app --host 127.0.0.1 --port 8000 --reload"
 
 echo 2. Waiting for backend to initialize...
 timeout /t 3 /nobreak >nul
@@ -21,4 +22,3 @@ echo.
 echo Both servers are running!
 echo Keep both terminal windows open while working.
 pause
-
